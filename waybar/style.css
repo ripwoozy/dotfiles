@@ -1,0 +1,148 @@
+@import "../../.cache/wal/colors-waybar.css";
+* {
+  font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+  font-size: 16px;
+  font-weight: 700;
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0);
+  color: @foreground;
+}
+
+/* =========================
+   MODULE BOXES
+   ========================= */
+
+#memory,
+#disk,
+#custom-power,
+#workspaces,
+#custom-reload,
+#clock,
+#tray,
+#network,
+#pulseaudio,
+#battery {
+  background: alpha(@background, 1);
+  color: @foreground;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+  margin: 4px 4px;
+  padding: 4px 12px;
+  min-height: 22px;
+  box-shadow: inset 0 0 0 1px alpha(currentColor, 0.06);
+}
+
+/* =========================
+   COLORS PER MODULE
+   ========================= */
+
+#memory {
+  color: @color4;
+}
+
+#disk {
+  color: @color14;
+}
+
+#custom-reload {
+  color: @color5;
+}
+#custom-power {
+  color: @color9;
+  font-size: 20px;
+}
+#clock {
+  color: @color1;
+}
+
+#tray {
+  color: @color6;
+}
+
+#network {
+  color: @color7;
+  font-size: 20px;
+}
+
+#pulseaudio {
+  color: @color8;
+}
+
+#battery {
+  color: @color9;
+  font-size: 22px;
+}
+
+/* =========================
+   WORKSPACES (DOTS + STRETCH)
+   ========================= */
+
+#workspaces {
+  padding: 2px 1px;
+  color: @color2;
+  border-color: @color2;
+}
+
+/* ALL WORKSPACES */
+#workspaces button {
+  background: transparent;
+  border: none;
+  padding: 0 6px;
+  margin: 0 2px;
+  color: alpha(@color2, 0.5);
+  font-size: 10px;
+  transition: all 0.2s ease;
+}
+
+/* DOTS */
+#workspaces button:not(.active) {
+  color: alpha(@color2, 0.45);
+}
+
+/* PACMAN (ACTIVE) */
+#workspaces button.active {
+  color: @color2;
+}
+
+/* HOVER */
+#workspaces button:hover {
+  color: @color11;
+}
+
+/* =========================
+   HOVER EFFECTS
+   ========================= */
+
+#custom-logo:hover,
+#custom-reload:hover,
+#clock:hover,
+#custom-updates:hover,
+#network:hover,
+#pulseaudio:hover,
+#battery:hover {
+  background: alpha(@color0, 0.98);
+  box-shadow:
+    inset 0 0 0 1px alpha(currentColor, 0.10),
+    0 0 10px alpha(currentColor, 0.08);
+}
+
+/* =========================
+   BATTERY STATES
+   ========================= */
+
+#battery.warning {
+  color: @color11;
+}
+
+#battery.critical {
+  color: @color1;
+}
+
+#battery.charging {
+  color: @color12;
+}

@@ -1,0 +1,23 @@
+# === GLOBAL ===
+
+# Transparent background (adjust alpha at the end)
+background-color={background}e6
+
+# Text
+text-color={foreground}
+
+# Border
+border-color={color4}
+
+# Progress bar
+progress-color=over {color5}
+
+[urgency=low]
+border-color={color4}
+
+[urgency=normal]
+border-color={color4}
+
+[urgency=high]
+border-color={color1}
+text-color={foreground}
