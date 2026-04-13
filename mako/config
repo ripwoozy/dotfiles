@@ -17,3 +17,23 @@ layer=overlay
 
 [urgency=high]
 default-timeout=0
+
+[app-name=wp-vol]
+anchor=bottom-center
+layer=overlay
+history=0
+group-by=app-name
+format=<b>%s</b>
+text-alignment=center
+default-timeout=1000
+outer-margin=0,0,40,0
+
+[app-name=brightness-osd]
+anchor=bottom-center
+layer=overlay
+history=0
+group-by=app-name
+format=<b>%s</b>
+text-alignment=center
+default-timeout=1000
+outer-margin=0,0,40,0

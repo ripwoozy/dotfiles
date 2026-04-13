@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Author: ripwoozy
+
+brightness="$(brightnessctl -m | awk -F, '{print $4}' | tr -d '%')"
+
+[ -z "$brightness" ] && brightness=0
+[ "$brightness" -gt 100 ] && brightness=100
+[ "$brightness" -lt 0 ] && brightness=0
+
+notify-send \
+    -a "brightness-osd" \
+    -t 1000 \
+    -h string:x-canonical-private-synchronous:brightness \
+    -h int:value:"$brightness" \
+    "Brightness ${brightness}%"

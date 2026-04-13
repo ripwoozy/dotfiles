@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# Author: ripwoozy
+
+
+raw="$(wpctl get-volume @DEFAULT_AUDIO_SINK@)"
+
+# MUTED
+if printf '%s' "$raw" | grep -q '\[MUTED\]'; then
+    notify-send \
+        -a "wp-vol" \
+        -t 1000 \
+        -h string:x-canonical-private-synchronous:volume \
+        -h int:value:0 \
+        "Muted"
+    exit 0
+fi
+
+# NORMAL
+volume="$(printf '%s' "$raw" | awk '{print $2}')"
+volume="$(awk "BEGIN { printf \"%d\", $volume * 100 }")"
+
+notify-send \
+    -a "wp-vol" \
+    -t 1000 \
+    -h string:x-canonical-private-synchronous:volume \
+    -h int:value:"$volume" \
+    "Volume ${volume}%"
