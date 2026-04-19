@@ -26,7 +26,7 @@ REPO_PKGS=(
   playerctl libnotify imv mpv wget zsh
   awww unzip rofi ttf-jetbrains-mono waybar
   ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols noto-fonts-emoji gnome-themes-extra
-  spotify-launcher wl-clipboard grim mako jq nemo
+  spotify-launcher wl-clipboard grim mako jq nemo polkit-gnome
 
   # Audio (PipeWire)
   alsa-utils pipewire pipewire-alsa
